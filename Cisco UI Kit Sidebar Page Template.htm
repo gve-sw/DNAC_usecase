@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/assets/sidebar.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="locale" content="US">
+        <meta name="language" content="en">
+        <meta name="country" content="US">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Cisco UI Kit Sidebar Page Template</title>
+        <link rel="stylesheet" href="./Cisco UI Kit Sidebar Page Template_files/cui-standard.min.css">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="file://www.cisco.com/favicon.ico">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="file:///www.cisco.com/favicon.ico">
+    </head>
+    <body class="cui">
+        <div class="content-fluid">
+            <div class="sidebar sidebar--indigo">
+                <div class="sidebar__header">
+                    <div class="sidebar__header-title">My App</div>
+                </div>
+                <ul>
+                    <li class="sidebar__item"><a>Dashboard</a></li>
+                    <li class="sidebar__item"><a>Monitor</a></li>
+                    <li class="sidebar__drawer">
+                        <a>Configuration</a>
+                        <ul>
+                            <li class="sidebar__item"><a>Open Device Configuration</a></li>
+                            <li class="sidebar__item"><a>Configuration Guides</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar__drawer">
+                        <a>Inventory</a>
+                        <ul>
+                            <li class="sidebar__item"><a>Routers</a></li>
+                            <li class="sidebar__item"><a>Switches</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar__drawer">
+                        <a>Services</a>
+                        <ul>
+                            <li class="sidebar__item"><a>Network Services</a></li>
+                            <li class="sidebar__item"><a>Mobility Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar__item"><a>Reports</a></li>
+                </ul>
+            </div>
+            <main>
+                <header class="header header--tall">
+                    <div class="header-bar container">
+                        <a href="javascript:;" class="header-bar__logo">
+                            <span class="icon-cisco"></span>
+                        </a>
+                        <div class="header-bar__main">
+                            <div class="header-breadcrumbs">
+                                <ul class="breadcrumb">
+                                    <li><a href="file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/index.html">UI kit</a></li>
+                                    <li><span>Sidebar Page Template</span></li>
+                                </ul>
+                            </div>
+                            <div class="header-heading">
+                                <h1 class="page-title">My Awesome Cisco Application</h1>
+                            </div>
+                            <div class="header-menus">
+                                <ul class="nav nav-tabs">
+                                    <li class="tab">
+                                        <a href="file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/assets/basic.html"><div class="tab__heading" title="Basic">Basic</div></a>
+                                    </li>
+                                    <li class="tab">
+                                        <a href="file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/assets/standard.html"><div class="tab__heading" title="Standard">Standard</div></a>
+                                    </li>
+                                    <li class="tab">
+                                        <a href="file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/assets/wide.html"><div class="tab__heading" title="Wide">Wide</div></a>
+                                    </li>
+                                    <li class="tab active">
+                                        <a href="file:///Users/agabdelb/Documents/CiscoUI/pattern-library/build/docs/assets/sidebar.html"><div class="tab__heading" title="Sidebar">Sidebar</div></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="header-toolbar">
+                            <a href="javascript:;" class="btn btn--icon">
+                                <span class="icon-search"></span>
+                            </a>
+                            <a href="javascript:;" class="btn btn--icon">
+                                <span class="icon-alert"></span>
+                            </a>
+                            <a href="javascript:;" class="btn btn--icon">
+                                <span class="icon-cog"></span>
+                            </a>
+                        </div>
+                    </div>
+                </header>
+                <div class="content" style="height:100%">
+                    <div class="container">
+                        <div class="section">
+    
+
+<table border="1">
+<tbody>
+  <tr>
+    <td>
+    <h1>Add port to room </h1>
+
+{% if status %}
+{% if status == "PRT" %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul id=flashes>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+{% endif %}
+{% endif %}
+<form action="/add_port_to_room" method="POST">
+
+ {{ formport.csrf }}
+  <div>
+<div class="input text">
+    <label for="room">Room:</label>
+
+    {{ formport.room ( id="room") }} 
+</div>
+  </div>
+
+  <div>
+    <label for="port">Port:</label>
+    {{ formport.port (type="text",id="port")}} 
+  </div>
+
+ 
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+    </td>
+    <td>
+    <h1>Assigne Vlan to room </h1>
+
+{% if status %}
+{% if status == "VLAN" %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul id=flashes>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+{% endif %}
+{% endif %}
+
+<form action="/add_vlan" method="POST">
+
+ {{ formvlan.csrf }}
+  <div>
+<div class="input text">
+    <label for="room">Room:</label>
+
+    {{ formvlan.room (list="rooms", id="room") }}
+</div>
+  </div>
+
+  <div>
+    <label for="port">Vlan:</label>
+    {{ formvlan.vlan (type="text",id="port")}} 
+  </div>
+
+ 
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+   
+    </td>
+    <td>
+    <div>
+<h1>Details:</h1>
+<p> Siwtch1 = Ports : 0, 1, 2<br />
+ Siwtch2 = Ports : 3, 4, 5</p>
+ <p>
+{% if rooms_details %}
+    {% for room in rooms_details %}
+        
+         {{room['name']}}   = Ports : {{room['ports']}}  Vlan:{{room['vlan']}} <br />
+
+    {% endfor %}
+{% endif %}
+</p>
+</div>
+    </td>
+</tr>
+
+<tr>
+
+<div>
+    <script src='https://abdvl.github.io/src/dist/js/next.js'></script>
+    <script  src="{{ url_for('static', filename='index.js') }}"></script>
+</div>
+
+</tr>
+  <datalist id="rooms">
+    <option value="room1">
+    <option value="room2">
+    <option value="All Rooms">
+  </datalist>   
+</tbody>
+</table>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer footer--basic">
+                    <div class="footer__links">
+                        <ul class="list">
+                            <li><a href="http://www.cisco.com/cisco/web/siteassets/contacts/index.html" target="_blank">Contacts</a></li>
+                            <li><a href="https://secure.opinionlab.com/ccc01/o.asp?id=jBjOhqOJ" target="_blank">Feedback</a></li>
+                            <li><a href="https://www.cisco.com/c/en/us/about/help.html" target="_blank">Help</a></li>
+                            <li><a href="http://www.cisco.com/c/en/us/about/sitemap.html" target="_blank">Site Map</a></li>
+                            <li><a href="https://www.cisco.com/c/en/us/about/legal/terms-conditions.html" target="_blank">Terms &amp; Conditions</a></li>
+                            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html" target="_blank">Privacy Statement</a></li>
+                            <li><a href="https://www.cisco.com/c/en/us/about/legal/privacy-full.html#cookies" target="_blank">Cookie Policy</a></li>
+                            <li><a href="https://www.cisco.com/c/en/us/about/legal/trademarks.html" target="_blank">Trademarks</a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    
+
+</body></html>
