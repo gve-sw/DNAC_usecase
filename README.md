@@ -81,7 +81,7 @@ Use the GUI to assigne ports into difrent rooms, and then assigne vlan to room, 
 
 ![alt text][GUI]
 
-[GUI]:https://github.com/gve-sw/DNAC_usecase/tree/master/static/img/GUI.png "Logo Title Text 2"
+[GUI]:./static/img/GUI.png "Logo Title Text 2"
 
 
 
