@@ -1,14 +1,4 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/NEXTSUPPORT/pen/KgyGGg.
-
- tags[groups,basic]
-description[Adding groups is easy as pie. This example shows.]
-
-
-Reserv one of these labs 
-run the srept to create the template and save the template id 
-
-
-# DNA C automation POV
+# CISCO DNA Center automation POV
 This prototype is a mockup interface to DNAC, using DNAC APIs we can automate bussness workflows and start building intgrating bussness applications into the network. this is an exmple using the template editor in DNAC we are able to automate the assigement of vlan trough a network based on a bussness logic, where we orgnise couple of network ports regardless of the switch into logical rooms, and then we use the API to assigne vlans to the rooms, the app would go and update the vlans on the respective ports using DNAC APIs 
 The prototype is built using a python Flask server and CISCO UI toolkit and cisco NeXt UI toolkit, the GUI allows the user to group ports into rooms and then assigne vlans to rooms
 
