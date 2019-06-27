@@ -6,7 +6,7 @@ The prototype is built using a python Flask server and CISCO UI toolkit and cisc
 
 #### Clone the repo :
 ```
-$ git clone https://github.com/Abdellbar/Asset_tracking_POV
+$ git clone https://github.com/gve-sw/DNAC_usecase
 ```
 
 #### Install dependencies :
@@ -17,15 +17,15 @@ $ pip install WTForms
 
 ## Setup:
 #### DANC details :
-You can deploy this portotype with one of our CISCO DevNet DNAC lab sandboxes availible here.
-fill in the details of your DNAC server in the DNAC.py file
-```
-dnac_host = 'sandboxdnac2.cisco.com'
-dnac_user = 'devnetuser'
-dnac_pass = 'Cisco123!'
+You can deploy this portotype with one of our CISCO DevNet DNAC lab sandboxes availible [here](https://devnetsandbox.cisco.com).
+fill in the details of your DNAC server in the [DNAC.py](./DNAC.py) file
+```python
+dnac_host = 'you ip address or host'
+dnac_user = 'your user '
+dnac_pass = 'your passowrd '
 ```
 
-#### Run script dnachelper.py:
+#### Run script [dnachelper.py](./dnachelper.py):
 Run this file the first time before runing the server, this will create the template in DNAC and genrate the template id and device Ids
 ```
 $ python3 dnachelper.py
@@ -47,15 +47,15 @@ Hostname                      ##Ip Address          ##Id
 
 #### Update files for your envirenement:
 
-Update the template id in the file DNAC.py
+Update the template id in the file [DNAC.py](./DNAC.py)
 
-```
+```python
 template_v_id = 'your template id goes here'
 ```
 
-Update the device ids in the rooms.js file :
+Update the device ids in the [rooms.js](./rooms.js) file :
 
-```
+```json
   "ports": [
     {
       "switch_id": "6a49c827-9b28-490b-8df0-8b6c3b582d8a",
@@ -65,7 +65,7 @@ Update the device ids in the rooms.js file :
 ```
 Note: you can add ports from diffrent siwtches based on your demo, make sure to update server.py with the ports/updated accordighnly 
 
-```
+```python
 port = SelectField('Port', choices=[('',''),('0', 'Port 0/0/12'),('1', 'Port 0/0/13'),('2', 'Port 0/0/14'),('3', 'Port 0/0/15'),('4', 'Port 0/0/16'),('5', 'Port 0/0/17	')], validators=[validators.required()])
 ```
 ## Usage:
@@ -78,6 +78,12 @@ In a web browser open :
 http://127.0.0.1:5000/start
 
 Use the GUI to assigne ports into difrent rooms, and then assigne vlan to room, then you can login to the switches to check if the vlan modifcation went trough
+
+![alt text][GUI]
+
+[GUI]:https://github.com/gve-sw/DNAC_usecase/tree/master/static/img/GUI.png "Logo Title Text 2"
+
+
 
 
 
