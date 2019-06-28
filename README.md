@@ -1,7 +1,6 @@
 # CISCO DNA Center automation POV
-Using DNAC APIs we can automate bussness workflows and start building/intgrating bussness applications into the network. this is an exmple using the template editor in DNAC we are able to automate the assigement of vlan troughout the network based on a bussness logic, in this exmple we orgnise couple of network ports into logical rooms regardless of the switch, and then we use the API to assigne vlans to the rooms, the app would go and update the vlans on the respective ports using DNAC APIs 
-The prototype is built using a python Flask server and CISCO UI toolkit and cisco NeXt UI toolkit, the GUI allows the user to group ports into rooms and then assigne vlans to rooms
-
+Using DNAC APIs we can automate business workflows and start building/integrating business applications into the network. this is an example using the template editor in DNAC we are able to automate the assignment of vlan throughout the network based on a business logic, in this example we organize couple of network ports into logical rooms regardless of the switch, and then we use the API to assign vlans to the rooms, the app would go and update the vlans on the respective ports using DNAC APIs.
+The prototype is built using a python Flask server and CISCO UI toolkit and cisco NeXt UI toolkit, the GUI allows the user to group ports into rooms and then assign vlans to rooms
 ## Install:
 
 #### Clone the repo :
@@ -45,7 +44,7 @@ Hostname                      ##Ip Address          ##Id
 3504_WLC                      ##10.10.20.51         ##50c96308-84b5-43dc-ad68-cda146d80290
 ```
 
-#### Update files for your envirenement:
+#### Update files for your environment:
 
 Update the template id in the file [DNAC.py](./DNAC.py)
 
@@ -82,9 +81,3 @@ Use the GUI to assigne ports into difrent rooms, and then assigne vlan to room, 
 ![alt text][GUI]
 
 [GUI]:./static/img/GUI.png "Logo Title Text 2"
-
-
-
-
-
-
