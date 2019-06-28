@@ -16,8 +16,8 @@ $ pip install WTForms
 
 ## Setup:
 #### DANC details :
-You can deploy this portotype with one of our CISCO DevNet DNAC lab sandboxes availible [here](https://devnetsandbox.cisco.com).
-fill in the details of your DNAC server in the [DNAC.py](./DNAC.py) file
+You can deploy this prototype with one of our CISCO DevNet DNAC lab sandboxes available [here](https://devnetsandbox.cisco.com).
+Fill in the details of your DNAC server in the [DNAC.py](./DNAC.py) file
 ```python
 dnac_host = 'you ip address or host'
 dnac_user = 'your user '
@@ -62,21 +62,21 @@ Update the device ids in the [rooms.js](./rooms.js) file :
       "name": "0/0/12"
     },
 ```
-Note: you can add ports from diffrent siwtches based on your demo, make sure to update server.py with the ports/updated accordighnly 
+Note: you can add ports from different switches based on your demo, make sure to update server.py with the ports/updated accordingly 
 
 ```python
 port = SelectField('Port', choices=[('',''),('0', 'Port 0/0/12'),('1', 'Port 0/0/13'),('2', 'Port 0/0/14'),('3', 'Port 0/0/15'),('4', 'Port 0/0/16'),('5', 'Port 0/0/17	')], validators=[validators.required()])
 ```
 ## Usage:
 
-Launch the server by issueing 
+Launch the server by issuing 
 ```
 $ python server.py
 ```
 In a web browser open :
 http://127.0.0.1:5000/start
 
-Use the GUI to assigne ports into difrent rooms, and then assigne vlan to room, then you can login to the switches to check if the vlan modifcation went trough
+Use the GUI to assign ports into different rooms, and then assign vlan to room, then you can login to the switches to check if the vlan modification went through
 
 ![alt text][GUI]
 
